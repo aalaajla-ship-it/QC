@@ -1,0 +1,5 @@
+# QR Code Test - Variation 1: Simple text, Medium error correction
+CLS
+TEXT 20,20,"3",0,0.8,0.8,"TEST 1: M error, cell 4"
+QRCODE 100,50,M,4,A,0,"TEST1"
+PRINT 1

@@ -1,0 +1,6 @@
+change db local to central db in the control pc
+change the app from English to French 
+in Quality page : in filtres add filtration with états 
+in op page : 	TOLERANCE IN TER STIPING SHOULD BE RELATED TO THE WIRE SECTION AND THE TER
+		COIL SCANN NOT ACTIVE IF THE OP DONT CHANGE WIRE			
+		TER SCANN NOT ACTIVATE IF THE OP DONT CHANGE THE SECTION AND THE TER

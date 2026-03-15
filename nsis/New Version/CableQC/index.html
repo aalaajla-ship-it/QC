@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CableQC System</title>
+  </head>
+  <body style="background:#0f172a;">
+    <div id="initial-splash">
+      <style>
+        #initial-splash { position: fixed; inset: 0; z-index: 2147483647; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top, rgba(37,99,235,0.25) 0%, rgba(23,37,84,0.5) 45%, rgba(15,23,42,0.9) 100%); color: white; transition: opacity 320ms ease; opacity: 1; }
+        #initial-splash.hidden { opacity: 0; pointer-events: none; }
+        #initial-splash .wrap { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 28px 32px; border-radius: 20px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 50px 120px -30px rgba(15,23,42,0.75); backdrop-filter: blur(8px); }
+        #initial-splash .spinner { position: relative; width: 56px; height: 56px; }
+        #initial-splash .spinner:before { content: ""; position: absolute; inset: 0; border-radius: 9999px; border: 2px solid rgba(59,130,246,0.6); border-top-color: transparent; animation: ispin 1.1s linear infinite; }
+        #initial-splash .title { font-weight: 600; font-size: 18px; text-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+        #initial-splash .desc { font-size: 12px; opacity: 0.8; }
+        @keyframes ispin { to { transform: rotate(360deg); } }
+      </style>
+      <div class="wrap" role="status" aria-live="polite" aria-label="Loading">
+        <div class="spinner" aria-hidden="true"></div>
+        <div class="title">Starting CableQC</div>
+        <div class="desc">Preparing workspace…</div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module">
+      // Show the Tauri window as early as possible (no top-level await)
+      try {
+        if (window.__TAURI_IPC__) {
+          import("@tauri-apps/api/window")
+            .then(({ appWindow }) => {
+              appWindow.show().catch(() => {});
+            })
+            .catch(() => {});
+        }
+      } catch {}
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

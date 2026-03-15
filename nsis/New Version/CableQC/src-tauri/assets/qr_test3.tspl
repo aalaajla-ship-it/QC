@@ -1,0 +1,5 @@
+# QR Code Test - Variation 3: Larger cell size
+CLS
+TEXT 20,20,"3",0,0.8,0.8,"TEST 3: H error, cell 5"
+QRCODE 100,50,H,5,A,0,"TEST3"
+PRINT 1

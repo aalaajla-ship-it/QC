@@ -1,0 +1,5 @@
+# QR Code Test - Variation 2: Simple text, High error correction  
+CLS
+TEXT 20,20,"3",0,0.8,0.8,"TEST 2: H error, cell 4"
+QRCODE 100,50,H,4,A,0,"TEST2"
+PRINT 1

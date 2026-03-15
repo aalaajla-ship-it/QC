@@ -1,0 +1,349 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Surface Colors - Enhanced with subtle gradients */
+    --background: 216 19% 97%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Brand Colors - Vibrant Indigo System */
+    --primary: 239 84% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 239 84% 52%;
+    --primary-light: 239 84% 96%;
+    --primary-glow: 239 84% 68%;
+    
+    /* Secondary & Surface Variants */
+    --secondary: 217 19% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 217 19% 30%;
+    
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 9% 46%;
+    
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Status Colors - More vibrant */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 94%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 92% 95%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 72% 96%;
+    
+    /* UI Elements */
+    --border: 220 13% 89%;
+    --input: 220 13% 91%;
+    --ring: 239 84% 58%;
+    
+    /* Sidebar - Modern dark gradient */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 239 84% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 17% 20%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 220 17% 17%;
+    --sidebar-ring: 239 84% 58%;
+    
+    /* Design Tokens - Enhanced shadows and gradients */
+    --radius: 0.625rem;
+    --shadow-sm: 0 1px 3px 0 hsl(220 9% 46% / 0.04), 0 1px 2px -1px hsl(220 9% 46% / 0.04);
+    --shadow-md: 0 4px 6px -1px hsl(220 9% 46% / 0.08), 0 2px 4px -2px hsl(220 9% 46% / 0.08);
+    --shadow-lg: 0 10px 15px -3px hsl(220 9% 46% / 0.1), 0 4px 6px -4px hsl(220 9% 46% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(220 9% 46% / 0.12), 0 8px 10px -6px hsl(220 9% 46% / 0.12);
+    --shadow-2xl: 0 25px 50px -12px hsl(220 9% 46% / 0.25);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(220 13% 95%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1) 0%, hsl(0 0% 100% / 0.05) 100%);
+    
+    /* Transitions - Smoother curves */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    /* Surface Colors */
+    --background: 222 47% 11%;
+    --foreground: 210 20% 98%;
+    
+    --card: 220 17% 16%;
+    --card-foreground: 210 20% 98%;
+    
+    --popover: 220 17% 16%;
+    --popover-foreground: 210 20% 98%;
+    
+    /* Brand Colors - Indigo System */
+    --primary: 239 84% 62%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 239 84% 68%;
+    --primary-light: 239 84% 18%;
+    --primary-glow: 239 84% 68%;
+    
+    /* Secondary & Surface Variants */
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 210 20% 98%;
+    --secondary-hover: 217 19% 33%;
+    
+    --muted: 220 17% 20%;
+    --muted-foreground: 220 9% 65%;
+    
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Status Colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 18%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 92% 18%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 72% 18%;
+    
+    /* UI Elements */
+    --border: 220 17% 26%;
+    --input: 220 17% 24%;
+    --ring: 239 84% 62%;
+    
+    /* Sidebar */
+    --sidebar-background: 220 17% 12%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 239 84% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 17% 20%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 220 17% 20%;
+    --sidebar-ring: 239 84% 62%;
+    
+    /* Enhanced shadows for dark mode */
+    --shadow-sm: 0 1px 3px 0 hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.5);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.6);
+    
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(220 17% 14%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.05) 0%, hsl(0 0% 100% / 0.02) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground font-sans antialiased;
+  }
+
+  #root {
+    @apply relative;
+  }
+  
+  /* Smooth transitions globally */
+  * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-md transition-colors duration-300;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/30;
+  }
+}
+
+@layer utilities {
+  @keyframes progressPulse {
+    0% {
+      transform: scaleX(0.25);
+    }
+    45% {
+      transform: scaleX(0.92);
+    }
+    100% {
+      transform: scaleX(0.25);
+    }
+  }
+
+  .animate-progress-pulse {
+    animation: progressPulse 1.8s ease-in-out infinite;
+  }
+
+  /* Status badge utilities */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold transition-all duration-base;
+  }
+  
+  /* Table utilities */
+  .table-header {
+    @apply text-xs font-bold uppercase tracking-wider text-muted-foreground;
+  }
+  
+  /* Focus ring utilities */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+  
+  /* Glass morphism effect */
+  .glass {
+    @apply backdrop-blur-md bg-card/80 border border-border/50;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+  
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-base hover:-translate-y-0.5 hover:shadow-lg;
+  }
+  
+  /* Card with enhanced shadow */
+  .card-enhanced {
+    @apply bg-card rounded-lg border border-border shadow-md hover:shadow-lg transition-shadow duration-base;
+  }
+}
+
+/* Sidebar animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px -5px rgba(99, 102, 241, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.8);
+  }
+}
+
+/* Page transition animations */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.page-transition-enter {
+  animation: page-enter 0.3s ease-out forwards;
+}
+
+.page-transition-exit {
+  animation: page-exit 0.2s ease-in forwards;
+}
+
+/* Smooth scrollbar for sidebar */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: hsl(var(--sidebar-border));
+  border-radius: 3px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}

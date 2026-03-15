@@ -1,0 +1,65 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "CableQC System",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "windows": [
+      {
+        "title": "CableQC System",
+        "width": 1280,
+        "height": 800,
+        "resizable": true,
+        "center": true,
+        "fullscreen": false,
+        "maximized": true,
+        "visible": false
+      }
+    ],
+   "bundle": {
+  "active": true,
+  "targets": ["nsis"],
+  "identifier": "com.cableqc.system",
+  "icon": [
+    "icons/icon.ico"
+  ],
+  "resources": [
+    "icons/icon.ico"
+  ],
+  "windows": {
+    "webviewInstallMode": {
+      "type": "embedBootstrapper"
+    }
+  }
+},
+    
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "fs": {
+        "all": false,
+        "readFile": true,
+        "writeFile": true
+      },
+      "dialog": {
+        "all": true
+      },
+      "path": {
+        "all": true
+      }
+    },
+    "security": {
+      "csp": null
+    }
+  }
+}
